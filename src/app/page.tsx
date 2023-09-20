@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <section className="w-full relative h-fit overflow-hidden">
+    <section className="w-full relative h-screen overflow-hidden">
       <Image 
         src='assets/bg-banner.svg'
         width={500}
@@ -10,9 +10,6 @@ export default function Home() {
         alt='Imagem'
         className='w-full absolute z-0 object-cover top-[50%] translate-y-[-50%]'
       />
-      <div className="container relative h-[720px] pt-36">
-        Hero
-      </div>
     </section>
   )
 }
