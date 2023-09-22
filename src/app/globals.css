@@ -1,7 +1,52 @@
-body{
-  background-color: black;
-  color: white;
+:root{
+
+  --white: #FFF;
+  --black: #000;
+
+  --emerald-500: #10B981;
+  --emerald-950: #022C22;
+  
+  --gray-950: #030712;
+
+  --blue-300: #93C5FD;
+  --blue-500: #4285F4;
+  --blue-700: #1D4ED8;
+
+  --slate-400: #94A3B8;
+  --slate-700: #334155;
+  --slate-800: #1E293B;
+  --slate-900: #0F172A;
+  --slate-950: #020617;
+
+  --yellow-600: #CA8A04;
+  --yellow-800: #854D0E;
+}
+
+
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body{
+  background-color: var(--gray-950);
+  color: var(--white);
+}
+
+button, input, textarea,
+button:focus, input:focus, textarea:focus{
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+.container{
+  width: 100vw;
+  max-width: 1200px;
+  margin: 0 auto;
 }
