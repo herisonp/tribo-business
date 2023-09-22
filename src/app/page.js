@@ -1,5 +1,7 @@
 export default function Home() {
   return (
-    <h1>Em staging</h1>
+    <div style={{minHeight: "100vh", display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+      <h1>Em produção</h1>
+    </div>
   )
 }
