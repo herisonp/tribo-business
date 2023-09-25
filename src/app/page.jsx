@@ -9,6 +9,7 @@ import AvatarEmpresa from '../../public/avatar.svg'
 import GaulesThree from '../../public/emojis/3.gif'
 import GaulesFive from '../../public/emojis/5.gif'
 import GaulesEleven from '../../public/emojis/11.gif'
+import Link from 'next/link'
 
 
 const empresas = 
@@ -57,7 +58,7 @@ export default function Home() {
           <S.FormSearch action="">
             <S.Input placeholder='Pesquise por nome' type="text" />
             <S.Input placeholder='Pesquise uma cidade ou endereço' type="text" />
-            <Button type="submit" hasBackground={true}>Buscar agora</Button>
+            <Button type="submit" $hasBackground>Buscar agora</Button>
           </S.FormSearch>
         </div>
       </S.Hero>
@@ -101,8 +102,10 @@ export default function Home() {
                 {empresa.endereco}
               </S.CardAdress>
 
-              <Button fullWidth={true} hasBackground={true}>
-                Ver empresa
+              <Button as="div" $fullWidth $hasBackground>
+                <Link href="#">
+                  Ver empresa
+                </Link>
               </Button>
 
             </S.CardRoot>

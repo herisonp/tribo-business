@@ -23,7 +23,7 @@ export default function Login(){
                 <S.FormInputLabel htmlFor="name">
                   E-mail
                 </S.FormInputLabel>
-                <S.FormInput id="name" type="text" placeholder="Digite seu email" />
+                <S.FormInput id="name" type="email" placeholder="Digite seu email" />
               </S.FormInputGroup>
 
               <S.FormInputGroup>
@@ -33,7 +33,7 @@ export default function Login(){
                 <S.FormInput id="senha" type="password" placeholder="Digite sua senha" />
               </S.FormInputGroup>
 
-              <Button hasBackground fullWidth>
+              <Button $hasBackground $fullWidth>
                 Entrar
               </Button>
             </S.FormLogin>

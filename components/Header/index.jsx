@@ -5,6 +5,7 @@ import * as S from './style'
 import Image from 'next/image'
 import Logo from '../../public/logo-tribo-business.svg'
 import Link from 'next/link'
+import { Button } from '../Button'
 
 export function Header(){
   return (
@@ -15,12 +16,19 @@ export function Header(){
         </Link>
 
         <nav>
-          {/* <Button> */}
-            <S.ButtonHead href="#">Criar conta</S.ButtonHead>
-          {/* </Button> */}
-          {/* <Button hasBackground={true}> */}
-            <S.ButtonHead href="./login" hasBackground>Entrar</S.ButtonHead>
-          {/* </Button> */}
+          <Button as="div">
+            <Link href="./">
+              Criar conta
+            </Link>          
+          </Button>
+
+          <Button as="div" $hasBackground>
+            <Link href="/login">
+              Entrar
+            </Link>
+          </Button>
+            {/* <S.ButtonHead href="#">Criar conta</S.ButtonHead> */}
+            {/* <S.ButtonHead href="./login" hasBackground>Entrar</S.ButtonHead> */}
         </nav>
       </div>
     </S.Header>
