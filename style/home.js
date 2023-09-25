@@ -1,60 +1,8 @@
 'use client'
 import styled from "styled-components"
 
-export const Button = styled.button`
-  padding-inline: 2rem;
-  padding-block: .75rem;
-  color: var(--white);
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 1rem;
-  background-color: ${(props) => props.hasBackground ? 'var(--blue-700)' : 'transparent'} ;
 
-  &:disabled{
-    cursor: not-allowed;
-    opacity: .7;
-  }
 
-  &:hover{
-    filter: brightness(1.3);
-    background-color: var(--white);
-    color: var(--blue-700);
-  }
-`
-export const Header = styled.header`
-  width: 100%;
-  border-bottom: 1px #334155 solid;
-  background-color: rgba(255, 255, 255, .02);
-  backdrop-filter: blur(4px);
-  position: fixed;
-  left: 0;
-  top: 0;
-  padding: 1rem;
-  z-index: 999;
-
-  .container{
-    display: flex;
-    align-items: center;
-  }
-
-  .container .logo{
-    width: 8rem;
-  }
-
-  .container nav{
-    display: flex;
-    flex: 1;
-    justify-content: end;
-    gap: .75rem;
-  }
-
-  @media (max-width: 640px) { // mobile
-    .container nav{
-      display: none;
-    }
-  }
-`
 export const Hero = styled.div`
   width: 100%;
   height: fit-content;
@@ -62,7 +10,7 @@ export const Hero = styled.div`
   background-color: var(--gray-950);
   background-image: url('/bg-hero.svg');
   background-repeat: no-repeat;
-  background-size: 110% cover;
+  background-size: 100% contain;
   background-position: center;
 
   .container{
@@ -233,10 +181,7 @@ export const CardTextDescription = styled.p`
 export const CardAdress = styled.div`
   text-align: center;
   font-size: 0.75rem;
-`
-export const CardButton = styled(Button)`
-  width: 100%;
-  margin-top: 2rem;
+  margin-bottom: 2rem;
 `
 export const Footer = styled.footer`
   width: 100%;

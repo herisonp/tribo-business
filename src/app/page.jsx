@@ -1,13 +1,14 @@
 'use client'
-import Image from 'next/image'
-import * as S from '../../style/home'
+import { useEffect, useState } from 'react'
 
-import Logo from '../../public/logo-tribo-business.svg'
+import * as S from '../../style/home'
+import { Button } from '../../components/Button'
+
+import Image from 'next/image'
 import AvatarEmpresa from '../../public/avatar.svg'
 import GaulesThree from '../../public/emojis/3.gif'
 import GaulesFive from '../../public/emojis/5.gif'
 import GaulesEleven from '../../public/emojis/11.gif'
-import { useEffect, useState } from 'react'
 
 
 const empresas = 
@@ -18,10 +19,6 @@ const empresas =
     endereco: "Rua do Abalo, 777, Vila Que Ota - Curitiba - PR",
     nicktwitch: "nicktwitch"
   }
-
-
-
-
 
 
 export default function Home() {
@@ -40,17 +37,6 @@ export default function Home() {
 
   return (
     <>
-      <S.Header>
-        <div className='container'>
-          <Image className='logo' src={Logo} alt='' />
-
-          <nav>
-            <S.Button>Criar conta</S.Button>
-            <S.Button hasBackground={true}>Entrar</S.Button>
-          </nav>
-        </div>
-      </S.Header>
-      
       <S.Hero>
         <div className='container'>
           <S.HeroContainer>
@@ -71,7 +57,7 @@ export default function Home() {
           <S.FormSearch action="">
             <S.Input placeholder='Pesquise por nome' type="text" />
             <S.Input placeholder='Pesquise uma cidade ou endereço' type="text" />
-            <S.Button type="submit" hasBackground={true}>Buscar agora</S.Button>
+            <Button type="submit" hasBackground={true}>Buscar agora</Button>
           </S.FormSearch>
         </div>
       </S.Hero>
@@ -99,7 +85,7 @@ export default function Home() {
               </S.CardHeader>
 
               <S.CardAvatar>
-                <Image className='CardAvatarImage' src={AvatarEmpresa} alt='Avatar da empresa' />
+                <Image className='CardAvatarImage' width={100} height={100} src={AvatarEmpresa} alt='Avatar da empresa' />
               </S.CardAvatar>
 
               <S.CardText>
@@ -115,9 +101,9 @@ export default function Home() {
                 {empresa.endereco}
               </S.CardAdress>
 
-              <S.CardButton hasBackground={true}>
+              <Button fullWidth={true} hasBackground={true}>
                 Ver empresa
-              </S.CardButton>
+              </Button>
 
             </S.CardRoot>
           ))}
