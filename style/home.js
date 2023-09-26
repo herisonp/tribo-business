@@ -1,6 +1,5 @@
+'use client'
 import styled from "styled-components"
-
-
 
 export const Hero = styled.div`
   width: 100%;
@@ -120,6 +119,10 @@ export const CardRoot = styled.div`
   border-radius: 16px;
 
   transition: all .2s ease-in-out;
+
+  &:hover{
+    border: 1px solid var(--blue-700);
+  }
 `
 export const Cards = styled.div`
   width: 100%;
@@ -129,12 +132,12 @@ export const Cards = styled.div`
   align-items: center;
   gap: 1.5rem;
   
-  @media (min-width: 640px) {
+  /* @media (min-width: 640px) {
     &:has(${CardRoot}:hover) ${CardRoot}:not(:hover){
       scale: 0.9;
       filter: brightness(.7) blur(2px);
     }
-  }
+  } */
 `
 export const CardHeader = styled.header`
   display: flex;

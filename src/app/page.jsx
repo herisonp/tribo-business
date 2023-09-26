@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 import * as S from '../../style/home'
 import { Button } from '../../components/Button'
@@ -9,7 +10,6 @@ import AvatarEmpresa from '../../public/avatar.svg'
 import GaulesThree from '../../public/emojis/3.gif'
 import GaulesFive from '../../public/emojis/5.gif'
 import GaulesEleven from '../../public/emojis/11.gif'
-import Link from 'next/link'
 
 
 const empresas = 
@@ -102,11 +102,11 @@ export default function Home() {
                 {empresa.endereco}
               </S.CardAdress>
 
-              <Button as="div" $fullWidth $hasBackground>
-                <Link href="#">
-                  Ver empresa
-                </Link>
-              </Button>
+              <Link href="/" style={{width: "100%",}}>
+                <Button as="div" $fullWidth $hasBackground>
+                    Ver empresa
+                </Button>
+              </Link>
 
             </S.CardRoot>
           ))}

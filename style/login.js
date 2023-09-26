@@ -1,3 +1,4 @@
+'use client'
 import styled from "styled-components"
 
 export const LoginMain = styled.section`
@@ -11,7 +12,6 @@ export const LoginMain = styled.section`
   justify-content: center;
   align-items: center;
 `
-
 export const LoginContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,7 +19,6 @@ export const LoginContainer = styled.div`
   align-items: center;
   height: 100%;
 `
-
 export const FormBox = styled.div`
   display: flex;
   flex-direction: column;
