@@ -1,10 +1,10 @@
 'use client'
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Header = styled.header`
   width: 100%;
   border-bottom: 1px #334155 solid;
-  background-color: rgba(255, 255, 255, .02);
+  background-color: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(4px);
   position: fixed;
   left: 0;
@@ -12,24 +12,25 @@ export const Header = styled.header`
   padding: 1rem;
   z-index: 999;
 
-  .container{
+  .container {
     display: flex;
     align-items: center;
   }
 
-  .container .logo{
+  .container .logo {
     width: 8rem;
   }
 
-  .container nav{
+  .container nav {
     display: flex;
     flex: 1;
     justify-content: end;
-    gap: .75rem;
+    gap: 0.75rem;
   }
 
-  @media (max-width: 640px) { // mobile
-    .container nav{
+  @media (max-width: 640px) {
+    // mobile
+    .container nav {
       display: none;
     }
   }

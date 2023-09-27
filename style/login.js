@@ -1,5 +1,5 @@
 'use client'
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const LoginMain = styled.section`
   width: 100%;
@@ -56,22 +56,22 @@ export const FormInputLabel = styled.label`
   font-weight: 700;
 `
 export const FormInput = styled.input`
-  padding: .75rem .88rem;
+  padding: 0.75rem 0.88rem;
   background: transparent;
   border: 1px solid var(--slate-700);
   color: var(--white);
   font-size: 1rem;
   border-radius: 4px;
 
-  &::placeholder{
+  &::placeholder {
     color: var(--slate-400);
   }
-  &:focus{
+  &:focus {
     border: 1px solid var(--blue-700);
   }
 `
 export const FormInputGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
 `

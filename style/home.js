@@ -1,5 +1,5 @@
 'use client'
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Hero = styled.div`
   width: 100%;
@@ -11,7 +11,7 @@ export const Hero = styled.div`
   background-size: 100% contain;
   background-position: center;
 
-  .container{
+  .container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,18 +26,18 @@ export const HeroContainer = styled.div`
   max-width: 34rem;
   margin: 0 auto;
 
-  h2{
+  h2 {
     font-size: 1.125rem;
     color: var(--yellow-600);
     text-transform: uppercase;
   }
 
-  h1{
+  h1 {
     font-size: 3rem;
     font-weight: 400;
   }
 
-  p{
+  p {
     font-size: 1.125rem;
     font-weight: normal;
     color: var(--blue-300);
@@ -55,7 +55,7 @@ export const FormSearch = styled.form`
   max-width: 50rem;
 
   @media (max-width: 640px) {
-    button{
+    button {
       width: 100%;
     }
   }
@@ -63,29 +63,29 @@ export const FormSearch = styled.form`
 export const Input = styled.input`
   background-color: var(--slate-950);
   border: 1px solid var(--slate-700);
-  padding: .75rem .75rem;
+  padding: 0.75rem 0.75rem;
   color: var(--white);
   border-radius: 4px;
   outline: none;
-  font-size: .875rem;
+  font-size: 0.875rem;
   flex: 1;
 
-  &::placeholder{
+  &::placeholder {
     color: var(--slate-400);
   }
-  &:focus{
+  &:focus {
     border: 1px solid var(--blue-700);
   }
 
-  button{
+  button {
     flex: 1;
-  }  
+  }
 `
 export const ContentRoot = styled.section`
   background-color: var(--gray-950);
   padding-block: 4rem;
 
-  > header{
+  > header {
     width: 100%;
     display: flex;
     flex: 1;
@@ -93,13 +93,13 @@ export const ContentRoot = styled.section`
     margin-bottom: 2.5rem;
   }
 
-  header h3{
+  header h3 {
     font-size: 1.25rem;
     font-weight: 700;
     flex: 1;
   }
 
-  header div.filter{
+  header div.filter {
     display: flex;
     gap: 1.5rem;
   }
@@ -118,9 +118,9 @@ export const CardRoot = styled.div`
   border: 1px solid var(--slate-800);
   border-radius: 16px;
 
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
-  &:hover{
+  &:hover {
     border: 1px solid var(--blue-700);
   }
 `
@@ -131,7 +131,7 @@ export const Cards = styled.div`
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
-  
+
   /* @media (min-width: 640px) {
     &:has(${CardRoot}:hover) ${CardRoot}:not(:hover){
       scale: 0.9;
@@ -162,7 +162,7 @@ export const CardAvatar = styled.div`
   width: 6rem;
   height: 6rem;
 
-  img{
+  img {
     width: 100%;
     object-fit: cover;
   }
@@ -199,14 +199,11 @@ export const Footer = styled.footer`
   text-align: center;
 `
 
-
-
 export const EmojiStyle = styled.span`
-  
   vertical-align: baseline;
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
 
-  img{
+  img {
     display: inline;
     font-size: 100%;
     vertical-align: baseline;

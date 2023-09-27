@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-
 import * as S from '../../style/home'
 import { Button } from '../../components/Button'
 
@@ -11,115 +10,123 @@ import GaulesThree from '../../public/emojis/3.gif'
 import GaulesFive from '../../public/emojis/5.gif'
 import GaulesEleven from '../../public/emojis/11.gif'
 
-
-const empresas = 
-  {
-    nomeEmpresa: "Nome da empresa",
-    categoria: "categoria",
-    descricao: "Ai, aqui vai ter uma breve descrição. Nela, o empreendedor, tem que dizer com poucas palavras qual é o seu negócio",
-    endereco: "Rua do Abalo, 777, Vila Que Ota - Curitiba - PR",
-    nicktwitch: "nicktwitch"
-  }
-
+const empresas = {
+	nomeEmpresa: 'Nome da empresa',
+	categoria: 'categoria',
+	descricao:
+		'Ai, aqui vai ter uma breve descrição. Nela, o empreendedor, tem que dizer com poucas palavras qual é o seu negócio',
+	endereco: 'Rua do Abalo, 777, Vila Que Ota - Curitiba - PR',
+	nicktwitch: 'nicktwitch',
+}
 
 export default function Home() {
+	const [loopEmpresas, setLoopEmpresas] = useState([empresas])
 
-  const [loopEmpresas, setLoopEmpresas] = useState([empresas]);
+	function criaUmLoopDeEmpresas() {
+		for (let index = 0; index < 5; index++) {
+			setLoopEmpresas((state) => [...state, empresas])
+		}
+	}
 
-  function criaUmLoopDeEmpresas(){
-    for (let index = 0; index < 5; index++) {      
-      setLoopEmpresas(state => [...state, empresas]);
-    }
-  }
+	useEffect(() => {
+		criaUmLoopDeEmpresas()
+	}, [])
 
-  useEffect(() => {
-    criaUmLoopDeEmpresas();
-  }, []);
+	return (
+		<>
+			<S.Hero>
+				<div className="container">
+					<S.HeroContainer>
+						<h2>
+							<S.EmojiStyle>
+								<Image src={GaulesFive} alt="" />
+							</S.EmojiStyle>
+							Do chat, para o chat
+						</h2>
+						<h1>
+							Encontre um <strong>business</strong> ou divulgue o seu, chat.
+						</h1>
+						<p>
+							Um lugar para uma mula que quer comprar para outra que quer
+							vender.
+							<S.EmojiStyle>
+								<Image src={GaulesEleven} alt="" width={22} height={22} />
+							</S.EmojiStyle>
+						</p>
+					</S.HeroContainer>
 
-  return (
-    <>
-      <S.Hero>
-        <div className='container'>
-          <S.HeroContainer>
-            <h2>
-              <S.EmojiStyle>
-                <Image src={GaulesFive} alt="" />
-              </S.EmojiStyle>
-              Do chat, para o chat
-            </h2>
-            <h1>Encontre um <strong>business</strong> ou divulgue o seu, chat.</h1>
-            <p>Um lugar para uma mula que quer comprar para outra que quer vender.
-              <S.EmojiStyle>
-                <Image src={GaulesEleven} alt="" width={22} height={22}/>
-              </S.EmojiStyle>
-            </p>
-          </S.HeroContainer>
+					<S.FormSearch action="">
+						<S.Input placeholder="Pesquise por nome" type="text" />
+						<S.Input
+							placeholder="Pesquise uma cidade ou endereço"
+							type="text"
+						/>
+						<Button type="submit" $hasBackground>
+							Buscar agora
+						</Button>
+					</S.FormSearch>
+				</div>
+			</S.Hero>
 
-          <S.FormSearch action="">
-            <S.Input placeholder='Pesquise por nome' type="text" />
-            <S.Input placeholder='Pesquise uma cidade ou endereço' type="text" />
-            <Button type="submit" $hasBackground>Buscar agora</Button>
-          </S.FormSearch>
-        </div>
-      </S.Hero>
+			<S.ContentRoot>
+				<header className="container">
+					<h3>Os princiais negócios</h3>
+					<div className="filter">
+						<S.Input type="text" placeholder="Todas categorias"></S.Input>
+					</div>
+				</header>
 
-      <S.ContentRoot>
-        <header className='container'>
-          <h3>Os princiais negócios</h3>
-          <div className="filter">
-            <S.Input type='text' placeholder='Todas categorias'></S.Input>
-          </div>
-        </header>
+				<S.Cards className="container">
+					{loopEmpresas.map((empresa, index) => (
+						<S.CardRoot key={empresa.nomeEmpresa + index}>
+							<S.CardHeader>
+								<S.CardHeaderCategorie>
+									{empresa.categoria}
+								</S.CardHeaderCategorie>
 
-        <S.Cards className='container'>
+								<S.CardHeaderNickTwitch href="#">
+									{empresa.nicktwitch}
+								</S.CardHeaderNickTwitch>
+							</S.CardHeader>
 
-          {loopEmpresas.map((empresa, index) => (
-            <S.CardRoot key={empresa.nomeEmpresa + index}>
-              <S.CardHeader>
-                <S.CardHeaderCategorie>
-                  {empresa.categoria}
-                </S.CardHeaderCategorie>
+							<S.CardAvatar>
+								<Image
+									className="CardAvatarImage"
+									width={100}
+									height={100}
+									src={AvatarEmpresa}
+									alt="Avatar da empresa"
+								/>
+							</S.CardAvatar>
 
-                <S.CardHeaderNickTwitch href="#">
-                  {empresa.nicktwitch}
-                </S.CardHeaderNickTwitch>
-              </S.CardHeader>
+							<S.CardText>
+								<S.CardTextTitle>{empresa.nomeEmpresa}</S.CardTextTitle>
+								<S.CardTextDescription>
+									{empresa.descricao}
+								</S.CardTextDescription>
+							</S.CardText>
 
-              <S.CardAvatar>
-                <Image className='CardAvatarImage' width={100} height={100} src={AvatarEmpresa} alt='Avatar da empresa' />
-              </S.CardAvatar>
+							<S.CardAdress>{empresa.endereco}</S.CardAdress>
 
-              <S.CardText>
-                <S.CardTextTitle>
-                  {empresa.nomeEmpresa}
-                </S.CardTextTitle>
-                <S.CardTextDescription>
-                  {empresa.descricao}
-                </S.CardTextDescription>
-              </S.CardText>
+							<Link href="/" style={{ width: '100%' }}>
+								<Button as="div" $fullWidth $hasBackground>
+									Ver empresa
+								</Button>
+							</Link>
+						</S.CardRoot>
+					))}
+				</S.Cards>
+			</S.ContentRoot>
 
-              <S.CardAdress>
-                {empresa.endereco}
-              </S.CardAdress>
-
-              <Link href="/" style={{width: "100%",}}>
-                <Button as="div" $fullWidth $hasBackground>
-                    Ver empresa
-                </Button>
-              </Link>
-
-            </S.CardRoot>
-          ))}
-
-        </S.Cards>
-      </S.ContentRoot>
-
-      <S.Footer>
-        <p> 
-          <S.EmojiStyle>
-            <Image src={GaulesThree} alt="" width={24} height={24} />
-          </S.EmojiStyle> <strong>A tribo ajuda a tribo.</strong> / Feito com 💜 pela mula herisonps</p>
-      </S.Footer>
-    </>
-  )
+			<S.Footer>
+				<p>
+					<S.EmojiStyle>
+						<Image src={GaulesThree} alt="" width={24} height={24} />
+					</S.EmojiStyle>{' '}
+					<strong>A tribo ajuda a tribo.</strong> / Feito com 💜 pela mula
+					herisonps
+				</p>
+			</S.Footer>
+		</>
+	)
 }
