@@ -1,8 +1,8 @@
-import Image from 'next/image'
-import { Button } from '../../../components/Button'
-import * as S from '../../../style/login'
+import { Button } from '../../components/Button'
+import * as S from '../../style/login'
 
 import GaulesTwo from '../../../public/emojis/2.gif'
+import { Emoji } from '@/components/Emoji'
 
 export default function Login() {
 	return (
@@ -11,15 +11,12 @@ export default function Login() {
 				<S.LoginContainer className="container">
 					<S.FormBox>
 						<S.FormTitle>
-							<span>
-								<Image
-									src={GaulesTwo}
-									alt="Emoji do Gaules dançando a cabecinha"
-									width={28}
-									height={28}
-								/>{' '}
-							</span>
 							Bem-vindo novamente
+							<Emoji
+								src={GaulesTwo}
+								alt="Emoji do Gaules dançando a cabecinha"
+								size={28}
+							/>
 						</S.FormTitle>
 						<S.FormDescription>
 							Digite seus dados de login para acessar a plataforma da{' '}

@@ -4,7 +4,7 @@ import Link from 'next/link'
 import * as S from './style'
 
 import Image from 'next/image'
-import Logo from '../../public/logo-tribo-business.svg'
+import Logo from '../../../public/logo-tribo-business.svg'
 
 export function Header() {
 	return (

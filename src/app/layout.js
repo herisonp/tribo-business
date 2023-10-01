@@ -1,4 +1,4 @@
-import { Header } from '../../components/Header'
+import { Header } from '../components/Header'
 import StyledComponentsRegistry from '../../lib/registry'
 import './globals.css'
 import { Inter } from 'next/font/google'

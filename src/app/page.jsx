@@ -1,14 +1,15 @@
 'use client'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import * as S from '../../style/home'
-import { Button } from '../../components/Button'
+import * as S from '../style/home'
 
 import Image from 'next/image'
 import AvatarEmpresa from '../../public/avatar.svg'
-import GaulesThree from '../../public/emojis/3.gif'
 import GaulesFive from '../../public/emojis/5.gif'
 import GaulesEleven from '../../public/emojis/11.gif'
+import { Emoji } from '@/components/Emoji'
+import { Footer } from '@/components/Footer'
+import { Button } from '@/components/Button'
 
 const empresas = {
 	nomeEmpresa: 'Nome da empresa',
@@ -38,9 +39,7 @@ export default function Home() {
 				<div className="container">
 					<S.HeroContainer>
 						<h2>
-							<S.EmojiStyle>
-								<Image src={GaulesFive} alt="" />
-							</S.EmojiStyle>
+							<Emoji src={GaulesFive} alt="" size={22} />
 							Do chat, para o chat
 						</h2>
 						<h1>
@@ -49,9 +48,7 @@ export default function Home() {
 						<p>
 							Um lugar para uma mula que quer comprar para outra que quer
 							vender.
-							<S.EmojiStyle>
-								<Image src={GaulesEleven} alt="" width={22} height={22} />
-							</S.EmojiStyle>
+							<Emoji src={GaulesEleven} alt="" size={22} />
 						</p>
 					</S.HeroContainer>
 
@@ -118,15 +115,7 @@ export default function Home() {
 				</S.Cards>
 			</S.ContentRoot>
 
-			<S.Footer>
-				<p>
-					<S.EmojiStyle>
-						<Image src={GaulesThree} alt="" width={24} height={24} />
-					</S.EmojiStyle>{' '}
-					<strong>A tribo ajuda a tribo.</strong> / Feito com 💜 pela mula
-					herisonps
-				</p>
-			</S.Footer>
+			<Footer />
 		</>
 	)
 }
