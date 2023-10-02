@@ -21,7 +21,7 @@ export function Header() {
 				</Link>
 
 				<nav>
-					<Link href="/">
+					<Link href="/register">
 						<Button as="div">Criar conta</Button>
 					</Link>
 					<Link href="/login">

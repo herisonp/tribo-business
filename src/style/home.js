@@ -93,7 +93,7 @@ export const ContentRoot = styled.section`
 		margin-bottom: 2.5rem;
 	}
 
-	header h3 {
+	header h2 {
 		font-size: 1.25rem;
 		font-weight: 700;
 		flex: 1;

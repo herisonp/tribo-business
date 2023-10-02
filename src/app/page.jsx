@@ -67,7 +67,7 @@ export default function Home() {
 
 			<S.ContentRoot>
 				<header className="container">
-					<h3>Os princiais negócios</h3>
+					<h2>Os princiais negócios</h2>
 					<div className="filter">
 						<S.Input type="text" placeholder="Todas categorias"></S.Input>
 					</div>
