@@ -8,8 +8,10 @@ export function Footer() {
 		<S.Footer>
 			<p>
 				<Emoji src={GaulesThree} alt="" />
-				<strong>A tribo ajuda a tribo.</strong> / Feito com 💜 pela mula
-				herisonps
+				<strong>A tribo ajuda a tribo.</strong> / Feito com 💜 pela mula{' '}
+				<a href="https://twitch.tv/herisonps" target="_blank" rel="noreferrer">
+					herisonps
+				</a>
 			</p>
 		</S.Footer>
 	)

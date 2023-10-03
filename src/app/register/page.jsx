@@ -1,5 +1,5 @@
 import { Box } from '@/components/Box'
-import * as S from '../../style/register'
+import * as S from './style'
 import { BoxTitle } from '@/components/Box/BoxTitle'
 import { Emoji } from '@/components/Emoji'
 

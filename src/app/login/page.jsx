@@ -1,5 +1,5 @@
 import { Button } from '../../components/Button'
-import * as S from '../../style/login'
+import * as S from './style'
 
 import GaulesTwo from '../../../public/emojis/2.gif'
 import GaulesSeven from '../../../public/emojis/7.gif'
