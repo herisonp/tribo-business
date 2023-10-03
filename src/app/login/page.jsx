@@ -12,6 +12,11 @@ import { FormRoot } from '@/components/Form/FormRoot'
 import { FormLabel } from '@/components/Form/FormLabel'
 import { Input } from '@/components/Form/Input'
 
+export const metadata = {
+	title: 'Login | Tribo Business',
+	description: 'Faça seu login na Tribo Business',
+}
+
 export default function Login() {
 	return (
 		<>

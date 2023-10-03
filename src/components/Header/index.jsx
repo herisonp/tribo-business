@@ -7,6 +7,7 @@ import Image from 'next/image'
 import Logo from '../../../public/logo-tribo-business.svg'
 
 export function Header() {
+	const isLoggedIn = false
 	return (
 		<S.Header>
 			<div className="container">
@@ -21,14 +22,29 @@ export function Header() {
 				</Link>
 
 				<nav>
-					<Link href="/register">
-						<Button as="div">Criar conta</Button>
-					</Link>
-					<Link href="/login">
-						<Button as="div" $hasBackground>
-							Entrar
-						</Button>
-					</Link>
+					{!isLoggedIn ? (
+						<>
+							<Link href="/register">
+								<Button as="div">Criar conta</Button>
+							</Link>
+							<Link className="link-mobile" href="/login">
+								<Button className="button-mobile" as="div" $hasBackground>
+									Entrar
+								</Button>
+							</Link>
+						</>
+					) : (
+						<>
+							<Link href="/csbr">
+								<Button as="div">Ver perfil</Button>
+							</Link>
+							<Link className="link-mobile" href="/">
+								<Button as="div" $hasBackground>
+									Sair
+								</Button>
+							</Link>
+						</>
+					)}
 				</nav>
 			</div>
 		</S.Header>

@@ -13,6 +13,11 @@ import { Button } from '@/components/Button'
 import { FormControl } from '@/components/Form/FormControl'
 import Link from 'next/link'
 
+export const metadata = {
+	title: 'Cadastre-se | Tribo Business',
+	description: 'Faça seu cadastro na Tribo Business',
+}
+
 export default function Register() {
 	return (
 		<>

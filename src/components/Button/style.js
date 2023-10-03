@@ -5,8 +5,7 @@ export const ButtonStyle = styled.button`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding-inline: 2rem;
-	padding-block: 0.75rem;
+	padding: 0.75rem 2rem;
 	color: var(--white);
 	border-radius: 4px;
 	cursor: pointer;

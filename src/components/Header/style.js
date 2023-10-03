@@ -9,8 +9,10 @@ export const Header = styled.header`
 	position: fixed;
 	left: 0;
 	top: 0;
-	padding: 1rem;
+	padding: 1rem 0;
 	z-index: 999;
+	display: flex;
+	align-items: center;
 
 	.container {
 		display: flex;
@@ -30,8 +32,11 @@ export const Header = styled.header`
 
 	@media (max-width: 640px) {
 		// mobile
-		.container nav {
+		.container nav a {
 			display: none;
+		}
+		.container nav a.link-mobile {
+			display: block;
 		}
 	}
 `
