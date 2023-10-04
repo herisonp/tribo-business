@@ -88,8 +88,8 @@ export const SelectScrollUpButton = styled(Select.ScrollUpButton)`
 	align-items: center;
 	justify-content: center;
 	height: 25px;
-	background-color: white;
-	color: var(--violet-11);
+	background-color: transparent;
+	color: var(--white);
 	cursor: default;
 `
 
