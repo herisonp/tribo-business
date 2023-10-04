@@ -1,5 +1,6 @@
 'use client'
 import styled from 'styled-components'
+import { ControlInputWithIcon } from '@/components/Form/InputWithIcon/style'
 
 export const Hero = styled.div`
 	width: 100%;
@@ -52,33 +53,18 @@ export const FormSearch = styled.form`
 	flex-wrap: wrap;
 	gap: 1.5rem;
 	width: 100%;
-	max-width: 50rem;
+	max-width: 800px;
+
+	${ControlInputWithIcon} {
+		flex: 1;
+	}
 
 	@media (max-width: 640px) {
-		button {
+		flex-wrap: nowrap;
+		flex-direction: column;
+		> * {
 			width: 100%;
 		}
-	}
-`
-export const Input = styled.input`
-	background-color: var(--slate-950);
-	border: 1px solid var(--slate-700);
-	padding: 0.75rem 0.75rem;
-	color: var(--white);
-	border-radius: 4px;
-	outline: none;
-	font-size: 0.875rem;
-	flex: 1;
-
-	&::placeholder {
-		color: var(--slate-400);
-	}
-	&:focus {
-		border: 1px solid var(--blue-700);
-	}
-
-	button {
-		flex: 1;
 	}
 `
 export const ContentRoot = styled.section`
@@ -125,6 +111,7 @@ export const CardRoot = styled.div`
 	}
 `
 export const Cards = styled.div`
+	position: relative;
 	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
@@ -184,4 +171,39 @@ export const CardAdress = styled.div`
 	text-align: center;
 	font-size: 0.75rem;
 	margin-bottom: 2rem;
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	color: var(--yellow-800);
+	p {
+		text-align: left;
+		color: var(--white);
+	}
+`
+
+// botão flutuante para habilitar mapa
+export const ButtonMap = styled.button`
+	display: block;
+	position: fixed;
+	z-index: 999;
+	bottom: 4rem;
+	left: 50%;
+	width: fit-content;
+	transform: translate(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	padding: 1rem 2rem;
+
+	border-radius: 32px;
+	background-color: var(--white);
+	color: var(--blue-700);
+	cursor: pointer;
+	transition: all 0.2s ease;
+
+	&:hover {
+		background-color: var(--blue-700);
+		color: var(--white);
+	}
 `

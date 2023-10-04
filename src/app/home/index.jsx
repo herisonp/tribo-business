@@ -1,15 +1,19 @@
 'use client'
 import { useEffect, useState } from 'react'
-import Link from 'next/link'
 import * as S from './style'
+import Link from 'next/link'
+import { Emoji } from '@/components/Emoji'
+import { Footer } from '@/components/Footer'
+import { Button } from '@/components/Button'
 
 import Image from 'next/image'
 import AvatarEmpresa from '../../../public/avatar.svg'
 import GaulesFive from '../../../public/emojis/5.gif'
 import GaulesEleven from '../../../public/emojis/11.gif'
-import { Emoji } from '@/components/Emoji'
-import { Footer } from '@/components/Footer'
-import { Button } from '@/components/Button'
+
+import { MapPinIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import { InputWithIcon } from '@/components/Form/InputWithIcon'
+import { Input } from '@/components/Form/Input'
 
 const empresas = {
 	nomeEmpresa: 'Nome da empresa',
@@ -52,11 +56,16 @@ export default function Home() {
 						</p>
 					</S.HeroContainer>
 
-					<S.FormSearch action="">
-						<S.Input placeholder="Pesquise por nome" type="text" />
-						<S.Input
+					<S.FormSearch>
+						<InputWithIcon
+							placeholder="Pesquise por nome"
+							type="text"
+							iconLeft={<MagnifyingGlassIcon height={24} />}
+						/>
+						<InputWithIcon
 							placeholder="Pesquise uma cidade ou endereço"
 							type="text"
+							iconLeft={<MapPinIcon height={24} />}
 						/>
 						<Button type="submit" $hasBackground>
 							Buscar agora
@@ -69,7 +78,7 @@ export default function Home() {
 				<header className="container">
 					<h2>Os princiais negócios</h2>
 					<div className="filter">
-						<S.Input type="text" placeholder="Todas categorias"></S.Input>
+						<Input type="text" placeholder="Todas categorias" />
 					</div>
 				</header>
 
@@ -103,7 +112,10 @@ export default function Home() {
 								</S.CardTextDescription>
 							</S.CardText>
 
-							<S.CardAdress>{empresa.endereco}</S.CardAdress>
+							<S.CardAdress>
+								<MapPinIcon width={24} />
+								<p>{empresa.endereco}</p>
+							</S.CardAdress>
 
 							<Link href="/csbr" style={{ width: '100%' }}>
 								<Button as="div" $fullWidth $hasBackground>
