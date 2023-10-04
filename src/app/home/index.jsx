@@ -13,7 +13,7 @@ import GaulesEleven from '../../../public/emojis/11.gif'
 
 import { MapPinIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 import { InputWithIcon } from '@/components/Form/InputWithIcon'
-import { Input } from '@/components/Form/Input'
+import { FormSelect } from '@/components/Form/FormSelect'
 
 const empresas = {
 	nomeEmpresa: 'Nome da empresa',
@@ -78,7 +78,7 @@ export default function Home() {
 				<header className="container">
 					<h2>Os princiais negócios</h2>
 					<div className="filter">
-						<Input type="text" placeholder="Todas categorias" />
+						<FormSelect />
 					</div>
 				</header>
 

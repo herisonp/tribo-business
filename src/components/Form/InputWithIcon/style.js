@@ -7,7 +7,6 @@ export const ControlInputWithIcon = styled.div`
 	background: var(--slate-950);
 	border: 1px solid var(--slate-700);
 	color: var(--white);
-	font-size: 1rem;
 	font-weight: 400;
 	border-radius: 4px;
 	transition: all 0.2s ease-in;
@@ -24,6 +23,7 @@ export const ControlInputWithIcon = styled.div`
 		width: 100%;
 		background-color: transparent;
 		color: var(--white);
+		font-size: 1rem;
 		padding: 0.75rem 0.88rem;
 	}
 
