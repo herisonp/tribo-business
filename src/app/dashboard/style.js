@@ -1,4 +1,5 @@
 'use client'
+import { ButtonStyle } from '@/components/Button/style'
 import styled from 'styled-components'
 
 export const DasboardMain = styled.main`
@@ -10,6 +11,152 @@ export const DasboardMain = styled.main`
 	background-position: center;
 	display: flex;
 	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+`
+
+export const ProfileContainer = styled.section`
+	max-width: 700px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+`
+
+export const ProfileHeader = styled.header`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+`
+
+export const ProfileAvatar = styled.div`
+	width: 160px;
+	height: 160px;
+	border-radius: 9999px;
+	overflow: hidden;
+	margin-bottom: 2rem;
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+`
+
+export const ProfileTitle = styled.h1`
+	font-size: 1.5rem;
+	color: var(--blue-300);
+	margin-bottom: 0.5rem;
+`
+
+export const ProfileInfo = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	font-size: 0.75rem;
+`
+
+export const ProfileCategorie = styled.span`
+	padding: 0.2rem 0.5rem;
+	background-color: var(--yellow-800);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 32px;
+`
+
+export const ProfileNickTwitch = styled.a`
+	color: var(--blue-300);
+	font-weight: 700;
+`
+
+export const ProfileDescription = styled.p`
+	text-align: center;
+	font-size: 1rem;
+	margin-top: 1rem;
+`
+
+export const ProfileAddress = styled.div`
+	font-weight: 700;
+	margin-top: 1rem;
+	text-align: center;
+	font-size: 0.75rem;
+	color: var(--yellow-600);
+`
+
+export const AddLinkButton = styled(ButtonStyle)`
+	margin-top: 2rem;
+`
+export const AddLinkIcon = styled.div`
+	margin-right: 0.5rem;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 `
+export const LinkList = styled.ul`
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	width: 100%;
+	margin-top: 3rem;
+`
+
+export const LinkListItem = styled.li`
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	padding: 2rem;
+	width: 100%;
+	gap: 6rem;
+
+	border-radius: 16px;
+	background-color: var(--slate-900);
+	border: 1px solid var(--slate-700);
+`
+export const LinkListInputs = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	flex: 1;
+`
+
+export const LinkListTitle = styled.input`
+	border: none;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	color: var(--white);
+	text-align: left;
+	font-size: 1.25rem;
+	font-weight: 700;
+	flex: 1;
+`
+
+export const LinkListURL = styled.input`
+	border: none;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	color: var(--white);
+	text-align: left;
+	font-weight: 400;
+	font-size: 1rem;
+	flex: 1;
+`
+
+export const LinkListEdit = styled.button`
+	background-color: var(--slate-700);
+	color: var(--white);
+	padding: 0.5rem;
+	border-radius: 999px;
+	display: flex;
+	align-items: center;
+`
+
+export const LinkListInput = styled.div`
+	display: flex;
+	gap: 2rem;
+`
+
+export const LinkListControls = styled.div``
