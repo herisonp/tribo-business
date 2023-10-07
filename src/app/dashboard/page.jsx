@@ -1,22 +1,23 @@
+'use client'
 import { Footer } from '@/components/Footer'
 import * as S from './style'
 
 import AvatarEmpresa from '../../../public/avatar.svg'
 import Image from 'next/image'
-import { PencilIcon, PlusIcon } from '@heroicons/react/24/outline'
-
-export const metadata = {
-	title: 'Dashboard | Tribo Business',
-	description: 'Configure as informações de sua empresa',
-}
+import {
+	CheckBadgeIcon,
+	PlusIcon,
+	TrashIcon,
+} from '@heroicons/react/24/outline'
+import LinkListInput from './components/LinkListInput'
 
 export default function Dashboard() {
 	return (
 		<>
 			<S.DasboardMain>
-				<S.ProfileContainer>
-					<S.ProfileHeader>
-						<S.ProfileAvatar>
+				<S.DashboardContainer>
+					<S.DashboardHeader>
+						<S.DashboardAvatar>
 							<Image
 								className="CardAvatarImage"
 								width={100}
@@ -24,22 +25,22 @@ export default function Dashboard() {
 								src={AvatarEmpresa}
 								alt="Avatar da empresa"
 							/>
-						</S.ProfileAvatar>
-						<S.ProfileTitle>CS Brasileiro</S.ProfileTitle>
-						<S.ProfileInfo>
-							<S.ProfileCategorie>delivery</S.ProfileCategorie>
-							<S.ProfileNickTwitch href="#">csbr</S.ProfileNickTwitch>
-						</S.ProfileInfo>
-						<S.ProfileDescription>
+						</S.DashboardAvatar>
+						<S.DashboardTitle>CS Brasileiro</S.DashboardTitle>
+						<S.DashboardInfo>
+							<S.DashboardCategorie>delivery</S.DashboardCategorie>
+							<S.DashboardNickTwitch href="#">csbr</S.DashboardNickTwitch>
+						</S.DashboardInfo>
+						<S.DashboardDescription>
 							Nosso delivery é especializado em qualquer coisa que você queira
 							comer. E nossa maior qualidade é ENTREGAR, afinal de contas, somos
 							o CS Brasileiro.
-						</S.ProfileDescription>
+						</S.DashboardDescription>
 
-						<S.ProfileAddress>
+						<S.DashboardAddress>
 							Liquid, 5x1, Estamos na semi final - Inferno - B
-						</S.ProfileAddress>
-					</S.ProfileHeader>
+						</S.DashboardAddress>
+					</S.DashboardHeader>
 
 					<S.AddLinkButton $hasBackground>
 						<S.AddLinkIcon>
@@ -51,25 +52,50 @@ export default function Dashboard() {
 					<S.LinkList>
 						<S.LinkListItem>
 							<S.LinkListInputs>
-								<S.LinkListInput>
-									<S.LinkListTitle value="Instagram | @minhaempresa" />
-									<S.LinkListEdit>
-										<PencilIcon height={20} />
-									</S.LinkListEdit>
-								</S.LinkListInput>
-
-								<S.LinkListInput>
-									<S.LinkListURL value="http://instagram.com/minhaempresa" />
-									<S.LinkListEdit>
-										<PencilIcon height={20} />
-									</S.LinkListEdit>
-								</S.LinkListInput>
+								<S.LinkListTitle>
+									<LinkListInput value={'Link inicial 1'} />
+								</S.LinkListTitle>
+								<S.LinkListURL>
+									<LinkListInput value={'http://instagram.com/herisonps'} />
+								</S.LinkListURL>
 							</S.LinkListInputs>
+							<S.LinkListControls>
+								<CheckBadgeIcon width={25} color="green" />
+								<TrashIcon width={20} color="red" />
+							</S.LinkListControls>
+						</S.LinkListItem>
 
-							<S.LinkListControls>controles</S.LinkListControls>
+						<S.LinkListItem>
+							<S.LinkListInputs>
+								<S.LinkListTitle>
+									<LinkListInput value={'Link inicial 2'} />
+								</S.LinkListTitle>
+								<S.LinkListURL>
+									<LinkListInput value={'http://instagram.com/herisonps'} />
+								</S.LinkListURL>
+							</S.LinkListInputs>
+							<S.LinkListControls>
+								<CheckBadgeIcon width={25} color="green" />
+								<TrashIcon width={20} color="red" />
+							</S.LinkListControls>
+						</S.LinkListItem>
+
+						<S.LinkListItem>
+							<S.LinkListInputs>
+								<S.LinkListTitle>
+									<LinkListInput value={'Link inicial 3'} />
+								</S.LinkListTitle>
+								<S.LinkListURL>
+									<LinkListInput value={'http://instagram.com/herisonps'} />
+								</S.LinkListURL>
+							</S.LinkListInputs>
+							<S.LinkListControls>
+								<CheckBadgeIcon width={25} color="green" />
+								<TrashIcon width={20} color="red" />
+							</S.LinkListControls>
 						</S.LinkListItem>
 					</S.LinkList>
-				</S.ProfileContainer>
+				</S.DashboardContainer>
 			</S.DasboardMain>
 			<Footer />
 		</>

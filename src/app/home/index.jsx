@@ -64,7 +64,7 @@ export default function Home() {
 						/>
 						<InputWithIcon
 							placeholder="Pesquise uma cidade ou endereço"
-							type="text"
+							type="search"
 							iconLeft={<MapPinIcon height={24} />}
 						/>
 						<Button type="submit" $hasBackground>

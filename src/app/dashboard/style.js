@@ -14,22 +14,19 @@ export const DasboardMain = styled.main`
 	justify-content: flex-start;
 	align-items: center;
 `
-
-export const ProfileContainer = styled.section`
+export const DashboardContainer = styled.section`
 	max-width: 700px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 `
-
-export const ProfileHeader = styled.header`
+export const DashboardHeader = styled.header`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 `
-
-export const ProfileAvatar = styled.div`
+export const DashboardAvatar = styled.div`
 	width: 160px;
 	height: 160px;
 	border-radius: 9999px;
@@ -42,22 +39,19 @@ export const ProfileAvatar = styled.div`
 		object-fit: cover;
 	}
 `
-
-export const ProfileTitle = styled.h1`
+export const DashboardTitle = styled.h1`
 	font-size: 1.5rem;
 	color: var(--blue-300);
 	margin-bottom: 0.5rem;
 `
-
-export const ProfileInfo = styled.div`
+export const DashboardInfo = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
 	font-size: 0.75rem;
 `
-
-export const ProfileCategorie = styled.span`
+export const DashboardCategorie = styled.span`
 	padding: 0.2rem 0.5rem;
 	background-color: var(--yellow-800);
 	display: flex;
@@ -65,19 +59,16 @@ export const ProfileCategorie = styled.span`
 	align-items: center;
 	border-radius: 32px;
 `
-
-export const ProfileNickTwitch = styled.a`
+export const DashboardNickTwitch = styled.a`
 	color: var(--blue-300);
 	font-weight: 700;
 `
-
-export const ProfileDescription = styled.p`
+export const DashboardDescription = styled.p`
 	text-align: center;
 	font-size: 1rem;
 	margin-top: 1rem;
 `
-
-export const ProfileAddress = styled.div`
+export const DashboardAddress = styled.div`
 	font-weight: 700;
 	margin-top: 1rem;
 	text-align: center;
@@ -94,69 +85,57 @@ export const AddLinkIcon = styled.div`
 	justify-content: center;
 	align-items: center;
 `
+
 export const LinkList = styled.ul`
 	display: flex;
 	flex-direction: column;
 	gap: 2rem;
 	width: 100%;
 	margin-top: 3rem;
+	list-style: none;
 `
-
 export const LinkListItem = styled.li`
+	padding: 2rem;
+	background-color: var(--slate-950-70);
+	border: 1px solid var(--slate-700);
+	border-radius: 16px;
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-	padding: 2rem;
-	width: 100%;
-	gap: 6rem;
+	transition: all 0.2s ease;
 
-	border-radius: 16px;
-	background-color: var(--slate-900);
-	border: 1px solid var(--slate-700);
+	&:hover {
+		border-color: var(--blue-700);
+	}
+
+	@media (max-width: 640px) {
+		padding: 1rem;
+	}
 `
 export const LinkListInputs = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
-	flex: 1;
+`
+export const LinkListTitle = styled.div`
+	* {
+		font-size: 1rem;
+		font-weight: 700;
+	}
+`
+export const LinkListURL = styled.div`
+	* {
+		font-size: 0.75rem;
+		font-weight: 400;
+	}
 `
 
-export const LinkListTitle = styled.input`
-	border: none;
-	background: transparent;
-	padding: 0;
-	margin: 0;
-	color: var(--white);
-	text-align: left;
-	font-size: 1.25rem;
-	font-weight: 700;
-	flex: 1;
-`
-
-export const LinkListURL = styled.input`
-	border: none;
-	background: transparent;
-	padding: 0;
-	margin: 0;
-	color: var(--white);
-	text-align: left;
-	font-weight: 400;
-	font-size: 1rem;
-	flex: 1;
-`
-
-export const LinkListEdit = styled.button`
-	background-color: var(--slate-700);
-	color: var(--white);
-	padding: 0.5rem;
-	border-radius: 999px;
+export const LinkListControls = styled.div`
 	display: flex;
-	align-items: center;
-`
+	flex-wrap: wrap;
+	gap: 1rem;
 
-export const LinkListInput = styled.div`
-	display: flex;
-	gap: 2rem;
+	> * {
+		cursor: pointer;
+	}
 `
-
-export const LinkListControls = styled.div``
