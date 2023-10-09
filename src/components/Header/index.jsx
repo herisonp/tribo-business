@@ -12,13 +12,7 @@ export function Header() {
 		<S.Header>
 			<div className="container">
 				<Link href="/">
-					<Image
-						className="logo"
-						src={Logo}
-						width={180}
-						height={'auto'}
-						alt=""
-					/>
+					<Image className="logo" src={Logo} width={166} height={27.8} alt="" />
 				</Link>
 
 				<nav>

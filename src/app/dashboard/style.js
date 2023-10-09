@@ -104,8 +104,20 @@ export const LinkListItem = styled.li`
 	align-items: flex-start;
 	transition: all 0.2s ease;
 
+	form {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	&:has(input:focus) {
+		border: 1px solid var(--blue-700);
+		background-color: var(--slate-700-10);
+	}
+
 	&:hover {
 		border-color: var(--blue-700);
+		background-color: var(--slate-700-10);
 	}
 
 	@media (max-width: 640px) {
@@ -134,6 +146,7 @@ export const LinkListControls = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1rem;
+	background-color: transparent;
 
 	> * {
 		cursor: pointer;
