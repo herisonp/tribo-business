@@ -1,5 +1,5 @@
 import * as S from './style'
 
-export function Box({ children }) {
-	return <S.Box>{children}</S.Box>
+export function Box(props) {
+	return <S.Box {...props}>{props.children}</S.Box>
 }

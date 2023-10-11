@@ -12,7 +12,11 @@ export const ButtonStyle = styled.button`
 	font-weight: ${(props) => (props.$fontWeight ? props.$fontWeight : '400')};
 	font-size: 1rem;
 	background-color: ${(props) =>
-		props.$hasBackground ? 'var(--blue-700)' : 'transparent'};
+		props.$hasBackground
+			? props.$background
+				? props.$background
+				: 'var(--blue-700)'
+			: 'transparent'};
 	width: ${(props) => (props.$fullWidth ? '100%' : 'fit-content')};
 	text-align: center;
 	transition: all 0.1s ease-in;

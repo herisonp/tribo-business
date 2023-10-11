@@ -33,7 +33,7 @@ export default function NewLinkList({
 				<S.Text>{value}</S.Text>
 			)}
 
-			<S.ButtonEdit as="a" onClick={handleEdit}>
+			<S.ButtonEdit type="button" onClick={handleEdit}>
 				<PencilIcon width={15} />
 			</S.ButtonEdit>
 		</S.ControlEdit>

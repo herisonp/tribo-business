@@ -7,6 +7,7 @@ import AvatarEmpresa from '../../../public/avatar.svg'
 import Image from 'next/image'
 import {
 	CheckCircleIcon,
+	PencilIcon,
 	PlusIcon,
 	TrashIcon,
 } from '@heroicons/react/24/outline'
@@ -15,6 +16,7 @@ import { useState } from 'react'
 import { FormRoot } from '@/components/Form/FormRoot'
 import { Switch } from '@/components/Form/Switch'
 import NewLinkList from './components/NewLinkList'
+import Link from 'next/link'
 
 const LinksIniciais = [
 	{
@@ -31,7 +33,7 @@ const LinksIniciais = [
 	},
 ]
 
-export default function Dashboard() {
+export default function Admin() {
 	const [newLink, setNewLink] = useState(false)
 	const [links, setLinks] = useState(LinksIniciais)
 	const [title, setTitle] = useState('')
@@ -70,10 +72,10 @@ export default function Dashboard() {
 
 	return (
 		<>
-			<S.DasboardMain>
-				<S.DashboardContainer>
-					<S.DashboardHeader>
-						<S.DashboardAvatar>
+			<S.AdminMain>
+				<S.AdminContainer>
+					<S.AdminHeader>
+						<S.AdminAvatar>
 							<Image
 								className="CardAvatarImage"
 								width={100}
@@ -81,22 +83,27 @@ export default function Dashboard() {
 								src={AvatarEmpresa}
 								alt="Avatar da empresa"
 							/>
-						</S.DashboardAvatar>
-						<S.DashboardTitle>CS Brasileiro</S.DashboardTitle>
-						<S.DashboardInfo>
-							<S.DashboardCategorie>delivery</S.DashboardCategorie>
-							<S.DashboardNickTwitch href="#">csbr</S.DashboardNickTwitch>
-						</S.DashboardInfo>
-						<S.DashboardDescription>
+							<S.ButtonAccount>
+								<Link href="admin/account/">
+									<PencilIcon width={24} />
+								</Link>
+							</S.ButtonAccount>
+						</S.AdminAvatar>
+						<S.AdminTitle>CS Brasileiro</S.AdminTitle>
+						<S.AdminInfo>
+							<S.AdminCategorie>delivery</S.AdminCategorie>
+							<S.AdminNickTwitch href="#">csbr</S.AdminNickTwitch>
+						</S.AdminInfo>
+						<S.AdminDescription>
 							Nosso delivery é especializado em qualquer coisa que você queira
 							comer. E nossa maior qualidade é ENTREGAR, afinal de contas, somos
 							o CS Brasileiro.
-						</S.DashboardDescription>
+						</S.AdminDescription>
 
-						<S.DashboardAddress>
+						<S.AdminAddress>
 							Liquid, 5x1, Estamos na semi final - Inferno - B
-						</S.DashboardAddress>
-					</S.DashboardHeader>
+						</S.AdminAddress>
+					</S.AdminHeader>
 
 					<S.AddLinkButton $hasBackground onClick={handleAddLink}>
 						<S.AddLinkIcon>
@@ -171,8 +178,8 @@ export default function Dashboard() {
 								</S.LinkListItem>
 							))}
 					</S.LinkList>
-				</S.DashboardContainer>
-			</S.DasboardMain>
+				</S.AdminContainer>
+			</S.AdminMain>
 			<Footer />
 		</>
 	)

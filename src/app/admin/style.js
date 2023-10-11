@@ -2,11 +2,11 @@
 import { ButtonStyle } from '@/components/Button/style'
 import styled from 'styled-components'
 
-export const DasboardMain = styled.main`
+export const AdminMain = styled.main`
 	width: 100%;
 	min-height: 100vh;
 	padding: 6rem 1rem;
-	background-image: url('./bg-hero.svg');
+	background-image: url('/bg-hero.svg');
 	background-size: 180% 180%;
 	background-position: center;
 	display: flex;
@@ -14,44 +14,62 @@ export const DasboardMain = styled.main`
 	justify-content: flex-start;
 	align-items: center;
 `
-export const DashboardContainer = styled.section`
+export const AdminContainer = styled.section`
 	max-width: 700px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 `
-export const DashboardHeader = styled.header`
+export const AdminHeader = styled.header`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 `
-export const DashboardAvatar = styled.div`
+export const AdminAvatar = styled.div`
+	position: relative;
 	width: 160px;
 	height: 160px;
-	border-radius: 9999px;
-	overflow: hidden;
 	margin-bottom: 2rem;
 
 	img {
 		width: 100%;
 		height: 100%;
+		border-radius: 9999px;
+		overflow: hidden;
 		object-fit: cover;
 	}
 `
-export const DashboardTitle = styled.h1`
+export const ButtonAccount = styled.div`
+	position: absolute;
+	right: -35px;
+	top: 0;
+	width: 42px;
+	height: 42px;
+	background-color: var(--slate-700);
+	border-radius: 999px;
+	padding: 0.75rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	a {
+		color: var(--white);
+	}
+`
+
+export const AdminTitle = styled.h1`
 	font-size: 1.5rem;
 	color: var(--blue-300);
 	margin-bottom: 0.5rem;
 `
-export const DashboardInfo = styled.div`
+export const AdminInfo = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
 	font-size: 0.75rem;
 `
-export const DashboardCategorie = styled.span`
+export const AdminCategorie = styled.span`
 	padding: 0.2rem 0.5rem;
 	background-color: var(--yellow-800);
 	display: flex;
@@ -59,16 +77,16 @@ export const DashboardCategorie = styled.span`
 	align-items: center;
 	border-radius: 32px;
 `
-export const DashboardNickTwitch = styled.a`
+export const AdminNickTwitch = styled.a`
 	color: var(--blue-300);
 	font-weight: 700;
 `
-export const DashboardDescription = styled.p`
+export const AdminDescription = styled.p`
 	text-align: center;
 	font-size: 1rem;
 	margin-top: 1rem;
 `
-export const DashboardAddress = styled.div`
+export const AdminAddress = styled.div`
 	font-weight: 700;
 	margin-top: 1rem;
 	text-align: center;

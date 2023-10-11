@@ -7,7 +7,7 @@ import Image from 'next/image'
 import Logo from '../../../public/logo-tribo-business.svg'
 
 export function Header() {
-	const isLoggedIn = false
+	const isLoggedIn = true
 	return (
 		<S.Header>
 			<div className="container">
