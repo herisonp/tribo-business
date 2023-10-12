@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import * as Switch from '@radix-ui/react-switch'
 
 export const SwitchRoot = styled(Switch.Root)`
+	flex-shrink: 0;
 	width: 42px;
 	height: 25px;
 	background-color: var(--red-500);

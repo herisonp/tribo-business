@@ -10,27 +10,69 @@ import Image from 'next/image'
 import { FormLabel } from '@/components/Form/FormLabel'
 import { FormSelect } from '@/components/Form/FormSelect'
 import { TextArea } from '@/components/Form/TextArea'
+import { ArrowLeftIcon } from '@heroicons/react/24/outline'
+import Link from 'next/link'
+import { Switch } from '@/components/Form/Switch'
 
 export default function Account() {
 	return (
 		<S.AccountMain>
-			<section className="container">
+			<S.AccountContainer>
 				<Box $fullWidth>
+					<S.AdminLinkBack>
+						<Link href="/admin/">
+							<ArrowLeftIcon width={20} />
+							<span>voltar</span>
+						</Link>
+					</S.AdminLinkBack>
+
 					<BoxTitle>Minha conta</BoxTitle>
 					<BoxDescription>Edite suas informações</BoxDescription>
 
 					<FormRoot>
-						<FormControl>
-							<Image src="/avatar.svg" width={80} height={80} />
-							<input type="file" />
-						</FormControl>
+						<S.AccountEditAvatar>
+							<S.AccountAvatar>
+								<Image src="/avatar.svg" width={80} height={80} />
+							</S.AccountAvatar>
+							<S.AccountFormLabel>
+								Troque seu avatar:
+								<Input type="file" />
+							</S.AccountFormLabel>
+						</S.AccountEditAvatar>
 						<Input type="text" placeholder="Seu nome" />
 						<Input type="email" placeholder="Seu email" />
 						<Input type="text" placeholder="Seu nick da Twich" />
 						<span>Informações da empresa:</span>
-						<Input type="text" placeholder="Nome da empresa" />
+						<FormControl>
+							<Input $fullWidth type="text" placeholder="Nome da empresa" />
+							<FormSelect />
+						</FormControl>
 						<TextArea placeholder="Descrição da empresa" />
-						<FormSelect />
+						<span>Endereço</span>
+						<FormControl>
+							<Input
+								$fullWidth
+								style={{ width: '70%' }}
+								placeholder="Rua"
+								type="text"
+							/>
+							<Input style={{ width: '30%' }} placeholder="Nº" type="number" />
+						</FormControl>
+						<FormControl>
+							<Input $fullWidth placeholder="Complemento" type="text" />
+							<Input $fullWidth placeholder="Bairro" type="text" />
+							<Input $fullWidth placeholder="CEP" type="text" />
+						</FormControl>
+						<FormControl>
+							<Input $fullWidth placeholder="Cidade" type="text" />
+							<Input $fullWidth placeholder="Estado" type="text" />
+						</FormControl>
+						<FormLabel>
+							<FormControl>
+								<Switch name="isDigital" isChecked={false} />
+								Minha empresa é digital e não se restringe a minha região.
+							</FormControl>
+						</FormLabel>
 						<Button type="submit" $hasBackground $fullWidth>
 							Salvar alterações
 						</Button>
@@ -62,13 +104,14 @@ export default function Account() {
 						</Button>
 					</S.AdminFormRoot>
 					<S.ButtonDeleteAccount>
+						<h3>Deseja excluir sua conta?</h3>
 						<Button $hasBackground $background="var(--red-500)" $fullWidth>
 							Excluir conta
 						</Button>
 						<p>Esta ação não é reversível.</p>
 					</S.ButtonDeleteAccount>
 				</Box>
-			</section>
+			</S.AccountContainer>
 		</S.AccountMain>
 	)
 }

@@ -1,3 +1,4 @@
+'use client'
 import { Button } from '../../components/Button'
 import * as S from './style'
 
@@ -11,11 +12,6 @@ import Link from 'next/link'
 import { FormRoot } from '@/components/Form/FormRoot'
 import { FormLabel } from '@/components/Form/FormLabel'
 import { Input } from '@/components/Form/Input'
-
-export const metadata = {
-	title: 'Login | Tribo Business',
-	description: 'Faça seu login na Tribo Business',
-}
 
 export default function Login() {
 	return (
@@ -56,10 +52,12 @@ export default function Login() {
 									placeholder="Digite sua senha"
 								/>
 							</FormLabel>
-							<Button $hasBackground $fullWidth>
-								<Emoji src={GaulesSeven} size={24} />
-								Entrar
-							</Button>
+							<Link href="/admin">
+								<Button type="button" $hasBackground $fullWidth>
+									<Emoji src={GaulesSeven} size={24} />
+									Entrar
+								</Button>
+							</Link>
 						</FormRoot>
 
 						<S.Register>

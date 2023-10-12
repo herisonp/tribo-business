@@ -47,27 +47,6 @@ export default function Register() {
 									placeholder="Digite seu email"
 								/>
 							</FormLabel>
-
-							<FormLabel>
-								Senha
-								<Input
-									$fullWidth
-									name="password"
-									type="password"
-									placeholder="Digite sua senha"
-								/>
-							</FormLabel>
-
-							<FormLabel>
-								Nome da empresa
-								<Input
-									$fullWidth
-									name="business"
-									type="text"
-									placeholder="Nome da empresa"
-								/>
-							</FormLabel>
-
 							<FormLabel>
 								Nome de usuário
 								<FormControl>
@@ -80,25 +59,31 @@ export default function Register() {
 									/>
 								</FormControl>
 							</FormLabel>
-
 							<FormLabel>
-								Seu nick na Twitch
+								Senha
 								<Input
 									$fullWidth
-									name="twitch"
-									type="text"
-									placeholder="Nick na Twitch"
+									name="password"
+									type="password"
+									placeholder="Digite sua senha"
 								/>
-								<p>
-									*Este dado servirá apenas para a comunidade te identificar no
-									chat, nada mais que isso.
-								</p>
+							</FormLabel>
+							<FormLabel>
+								Confirme sua senha
+								<Input
+									$fullWidth
+									name="password"
+									type="password"
+									placeholder="Confirme sua senha"
+								/>
 							</FormLabel>
 
-							<Button $hasBackground $fullWidth>
-								<Emoji src={GaulesSeven} size={24} />
-								Cadastrar
-							</Button>
+							<Link href="/admin/account">
+								<Button $hasBackground $fullWidth>
+									<Emoji src={GaulesSeven} size={24} />
+									Cadastrar
+								</Button>
+							</Link>
 						</FormRoot>
 						<S.HaveAccount>
 							Já tem uma conta?{' '}
